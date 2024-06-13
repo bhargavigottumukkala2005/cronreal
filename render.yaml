@@ -1,0 +1,11 @@
+# render.yaml
+
+services:
+  - name: cron
+    build_command: python -m pip install -r requirements.txt
+    start_command: python schedule-meeting.py
+    env:
+      - key: ZOOM_CLIENT_ID
+        from_secret: ZOOM_CLIENT_ID
+      - key: ZOOM_CLIENT_SECRET
+        from_secret: ZOOM_CLIENT_SECRET
